@@ -1,0 +1,38 @@
+name: Publish Packages
+
+on:
+  push:
+    tags: ["*"]
+    paths:
+      - grammar.js
+      - src/**
+      - test/**
+      - bindings/**
+      - binding.gyp
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+
+jobs:
+  github:
+    uses: tree-sitter/workflows/.github/workflows/release.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
+    with:
+      generate: true
+  npm:
+    uses: tree-sitter/workflows/.github/workflows/package-npm.yml@main
+    with:
+      generate: true
+  crates:
+    uses: tree-sitter/workflows/.github/workflows/package-crates.yml@main
+    with:
+      generate: true
+  pypi:
+    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@main
+    with:
+      generate: true
