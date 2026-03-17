@@ -8,7 +8,7 @@
     "url": "git+https://github.com/gdar463/tree-sitter-math.git"
   },
   "funding": "",
-  "license": "GPL-v3.0",
+  "license": "GPL-3.0-only",
   "author": {
     "name": "gdar463",
     "email": "dev@gdar463.com",
