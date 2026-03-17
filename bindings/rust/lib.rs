@@ -5,6 +5,7 @@
 //!
 //! ```
 //! let code = r#"
+//! 3
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_math::LANGUAGE;
