@@ -1,0 +1,51 @@
+==================
+Quadratic Formula
+==================
+
+x=(-b+-sqrt(b^2-4ac))/2a
+
+---
+
+(expression
+  (equals
+    left: (variable)
+    right: (division
+      left: (plus_minus
+        left: (coeff_variable
+          variable: (variable))
+        right: (square_root
+          argument: (subtraction
+            left: (exponential
+              base: (variable)
+              exponent: (number))
+            right: (coeff_variable
+              coefficient: (coeff_variable
+                coefficient: (number)
+                variable: (variable))
+              variable: (variable)))))
+      right: (coeff_variable
+        coefficient: (number)
+        variable: (variable)))))
+
+==================
+Absolute Value Piecewise Function
+==================
+
+piecewise({x,x>=0},{-x,x<0})
+
+---
+
+(expression
+  (piecewise
+    cases: (cases
+      (case
+        function: (variable)
+        interval: (more_than_equals
+          left: (variable)
+          right: (number)))
+      (case
+        function: (coeff_variable
+          variable: (variable))
+        interval: (less_than
+          left: (variable)
+          right: (number))))))

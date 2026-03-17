@@ -1,0 +1,40 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "math",
+      "camelcase": "Math",
+      "title": "Mathematical Expressions",
+      "scope": "source.math",
+      "injection-regex": "^math$",
+      "class-name": "TreeSitterMath"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "GPL-v3.0",
+    "description": "Math grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "gdar463",
+        "email": "dev@gdar463.com",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/gdar463/tree-sitter-math",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
+

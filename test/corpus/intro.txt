@@ -1,0 +1,81 @@
+==================
+Basic Operations
+==================
+
+3*5-2/6^(4)
+
+---
+
+(expression
+  (subtraction
+    left: (product
+      left: (number)
+      right: (number))
+    right: (division
+      left: (number)
+      right: (exponential
+        base: (number)
+        exponent: (number)))))
+
+==================
+Basic Operations w/variables
+==================
+
+3*x+2^(5+x)/6^(4)
+
+---
+
+(expression
+  (addition
+    left: (product
+      left: (number)
+      right: (variable))
+    right: (division
+      left: (exponential
+        base: (number)
+        exponent: (addition
+          left: (number)
+          right: (variable)))
+      right: (exponential
+        base: (number)
+        exponent: (number)))))
+
+==================
+Basic Operations w/variables & implicit mult
+==================
+
+3x+(2+5)x^(5+x)/6^4
+
+---
+
+(expression
+  (addition
+    left: (coeff_variable
+      coefficient: (number)
+      variable: (variable))
+    right: (division
+      left: (exponential
+        base: (coeff_variable
+          coefficient: (addition
+            left: (number)
+            right: (number))
+          variable: (variable))
+        exponent: (addition
+          left: (number)
+          right: (variable)))
+      right: (exponential
+        base: (number)
+        exponent: (number)))))
+
+==================
+Plus Minus
+==================
+
+b+-5
+
+---
+
+(expression
+  (plus_minus
+    left: (variable)
+    right: (number)))

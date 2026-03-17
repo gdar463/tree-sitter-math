@@ -1,0 +1,179 @@
+==================
+Sine
+==================
+
+sin(x)=sinx
+
+---
+
+(expression
+  (equals
+    left: (sine
+      argument: (variable))
+    right: (sine
+      argument: (variable))))
+
+==================
+Cosine
+==================
+
+cos(x)=cosx
+
+---
+
+(expression
+  (equals
+    left: (cosine
+      argument: (variable))
+    right: (cosine
+      argument: (variable))))
+
+==================
+Tangent
+==================
+
+tan(x)=tanx
+
+---
+
+(expression
+  (equals
+    left: (tangent
+      argument: (variable))
+    right: (tangent
+      argument: (variable))))
+
+==================
+Cosecant
+==================
+
+csc(x)=cscx
+
+---
+
+(expression
+  (equals
+    left: (cosecant
+      argument: (variable))
+    right: (cosecant
+      argument: (variable))))
+
+==================
+Secant
+==================
+
+sec(x)=secx
+
+---
+
+(expression
+  (equals
+    left: (secant
+      argument: (variable))
+    right: (secant
+      argument: (variable))))
+
+==================
+Cotangent
+==================
+
+cot(x)=cotx
+
+---
+
+(expression
+  (equals
+    left: (cotangent
+      argument: (variable))
+    right: (cotangent
+      argument: (variable))))
+
+==================
+Arcsine
+==================
+
+arcsin(x)=arcsinx
+
+---
+
+(expression
+  (equals
+    left: (arcsine
+      argument: (variable))
+    right: (arcsine
+      argument: (variable))))
+
+==================
+Arcosine
+==================
+
+arccos(x)=arccosx
+
+---
+
+(expression
+  (equals
+    left: (arccosine
+      argument: (variable))
+    right: (arccosine
+      argument: (variable))))
+
+==================
+Arctangent
+==================
+
+arctan(x)=arctanx
+
+---
+
+(expression
+  (equals
+    left: (arctangent
+      argument: (variable))
+    right: (arctangent
+      argument: (variable))))
+
+==================
+Arccosecant
+==================
+
+arccsc(x)=arccscx
+
+---
+
+(expression
+  (equals
+    left: (arccosecant
+      argument: (variable))
+    right: (arccosecant
+      argument: (variable))))
+
+==================
+Arcsecant
+==================
+
+arcsec(x)=arcsecx
+
+---
+
+(expression
+  (equals
+    left: (arcsecant
+      argument: (variable))
+    right: (arcsecant
+      argument: (variable))))
+
+==================
+Arccotangent
+==================
+
+arccot(x)=arccotx
+
+---
+
+(expression
+  (equals
+    left: (arccotangent
+      argument: (variable))
+    right: (arccotangent
+      argument: (variable))))

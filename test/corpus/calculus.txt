@@ -1,0 +1,154 @@
+==================
+Logarithms
+==================
+
+loge(6+6)-log(e^2)+ln(x**2+2)/log30(6)
+
+---
+
+(expression
+  (addition
+    left: (subtraction
+      left: (natural_logarithm
+        argument: (addition
+          left: (number)
+          right: (number)))
+      right: (natural_logarithm
+        argument: (exponential
+          base: (variable)
+          exponent: (number))))
+    right: (division
+      left: (natural_logarithm
+        argument: (addition
+          left: (exponential
+            base: (variable)
+            exponent: (number))
+          right: (number)))
+      right: (logarithm
+        base: (number)
+        argument: (number)))))
+
+==================
+Absolute Value
+==================
+
+abs(7x^3+7-ln(4))**abs(-4)
+
+---
+
+(expression
+  (exponential
+    base: (absolute_value
+      argument: (subtraction
+        left: (addition
+          left: (exponential
+            base: (coeff_variable
+              coefficient: (number)
+              variable: (variable))
+            exponent: (number))
+          right: (number))
+        right: (natural_logarithm
+          argument: (number))))
+    exponent: (absolute_value
+      argument: (number))))
+
+==================
+Roots
+==================
+
+sqrt(45x)+root3(38y)*root2(2)
+
+---
+
+(expression
+  (addition
+    left: (square_root
+      argument: (coeff_variable
+        coefficient: (number)
+        variable: (variable)))
+    right: (product
+      left: (nth_root
+        degree: (number)
+        argument: (coeff_variable
+          coefficient: (number)
+          variable: (variable)))
+      right: (square_root
+        argument: (number)))))
+
+==================
+Limits
+==================
+
+limx->5+(4x*4)=limx->5-(6)
+
+---
+
+(expression
+  (equals
+    left: (limit
+      variable: (variable)
+      point: (number)
+      function: (product
+        left: (coeff_variable
+          coefficient: (number)
+          variable: (variable))
+        right: (number)))
+    right: (limit
+      variable: (variable)
+      point: (number)
+      function: (number))))
+
+==================
+Derivatives
+==================
+
+d/dx5x=5
+
+---
+
+(expression
+  (equals
+    left: (derivative
+      variable: (variable)
+      function: (coeff_variable
+        coefficient: (number)
+        variable: (variable)))
+    right: (number)))
+
+==================
+Rolle's Theorem
+==================
+
+c=rolle(x^2,[2;4])
+
+---
+
+(expression
+  (equals
+    left: (variable)
+    right: (rolle
+      function: (exponential
+        base: (variable)
+        exponent: (number))
+      interval: (interval_both_inclusive
+        left: (number)
+        right: (number)))))
+
+==================
+Lagrange's Theorem
+==================
+
+c=lagrange(x^2,[2;4])
+
+---
+
+(expression
+  (equals
+    left: (variable)
+    right: (lagrange
+      function: (exponential
+        base: (variable)
+        exponent: (number))
+      interval: (interval_both_inclusive
+        left: (number)
+        right: (number)))))

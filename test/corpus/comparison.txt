@@ -1,0 +1,89 @@
+==================
+Equals
+==================
+
+3*5=5
+
+---
+
+(expression
+  (equals
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
+
+==================
+Not Equals
+==================
+
+3*5!=5
+
+---
+
+(expression
+  (not_equals
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
+
+==================
+Less Than
+==================
+
+3*5<5
+
+---
+
+(expression
+  (less_than
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
+
+==================
+Less Than Equals
+==================
+
+3*5<=5
+
+---
+
+(expression
+  (less_than_equals
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
+
+==================
+More Than
+==================
+
+3*5>5
+
+---
+
+(expression
+  (more_than
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
+
+==================
+More Than Equals
+==================
+
+3*5>=5
+
+---
+
+(expression
+  (more_than_equals
+    left: (product
+      left: (number)
+      right: (number))
+    right: (number)))
