@@ -79,7 +79,7 @@ sqrt(45x)+root3(38y)*root2(2)
 Limits
 ==================
 
-limx->5+(4x*4)=limx->5-(6)
+limx->5(4x*4)=limx->5-(6)
 
 ---
 
@@ -96,6 +96,7 @@ limx->5+(4x*4)=limx->5-(6)
     right: (limit
       variable: (symbol)
       point: (number)
+      (side)
       function: (number))))
 
 ==================

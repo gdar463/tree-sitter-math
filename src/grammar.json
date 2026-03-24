@@ -1794,100 +1794,36 @@
         ]
       }
     },
-    "interval": {
+    "interval_both_inclusive": {
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "TOKEN",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "["
-                },
-                {
-                  "type": "STRING",
-                  "value": "("
-                }
-              ]
-            }
-          },
-          "named": true,
-          "value": "left_bracket"
+          "type": "STRING",
+          "value": "["
         },
         {
           "type": "FIELD",
           "name": "left",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "number"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "symbol"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "number"
           }
         },
         {
-          "type": "TOKEN",
-          "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "STRING",
-                "value": ";"
-              },
-              {
-                "type": "STRING",
-                "value": ","
-              }
-            ]
-          }
+          "type": "STRING",
+          "value": ";"
         },
         {
           "type": "FIELD",
           "name": "right",
           "content": {
-            "type": "CHOICE",
-            "members": [
-              {
-                "type": "SYMBOL",
-                "name": "number"
-              },
-              {
-                "type": "SYMBOL",
-                "name": "symbol"
-              }
-            ]
+            "type": "SYMBOL",
+            "name": "number"
           }
         },
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "TOKEN",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "]"
-                },
-                {
-                  "type": "STRING",
-                  "value": ")"
-                }
-              ]
-            }
-          },
-          "named": true,
-          "value": "right_bracket"
+          "type": "STRING",
+          "value": "]"
         }
       ]
     },
@@ -1925,7 +1861,7 @@
             "name": "interval",
             "content": {
               "type": "SYMBOL",
-              "name": "interval"
+              "name": "interval_both_inclusive"
             }
           },
           {
@@ -1969,7 +1905,7 @@
             "name": "interval",
             "content": {
               "type": "SYMBOL",
-              "name": "interval"
+              "name": "interval_both_inclusive"
             }
           },
           {
@@ -2076,47 +2012,6 @@
           "value": "}"
         }
       ]
-    },
-    "modulo": {
-      "type": "PREC_LEFT",
-      "value": "function",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "FIELD",
-            "name": "dividend",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          },
-          {
-            "type": "TOKEN",
-            "content": {
-              "type": "CHOICE",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "mod"
-                },
-                {
-                  "type": "STRING",
-                  "value": "%"
-                }
-              ]
-            }
-          },
-          {
-            "type": "FIELD",
-            "name": "divisor",
-            "content": {
-              "type": "SYMBOL",
-              "name": "_expression"
-            }
-          }
-        ]
-      }
     }
   },
   "extras": [
