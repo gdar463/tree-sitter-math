@@ -66,19 +66,19 @@ jobs:
       - name: Setup tree-sitter
         uses: tree-sitter/setup-action/cli@v2
       - name: Install Node dependencies
-        run: npm i --omit peer --omit optional
-        env:
-          CXXFLAGS: -std=c++20
-      - name: Regenerate parser
-        shell: bash
-        run: |
-          while read -r grammar_dir; do
-            pushd "$grammar_dir"
-            npm x -- tree-sitter generate
-            popd >/dev/null
-          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
-        env:
-          TREE_SITTER_ABI_VERSION: ${{ env.TS_ABI_VERSION }}
+        run: npm i --ignore-scripts --omit peer --omit optional
+        # env:
+        #   CXXFLAGS: ${{ case(startsWith(matrix.os, 'windows-'), '/std:c++20', '-std=c++20')}}
+      # - name: Regenerate parser
+      #   shell: bash
+      #   run: |
+      #     while read -r grammar_dir; do
+      #       pushd "$grammar_dir"
+      #       npm x -- tree-sitter generate
+      #       popd >/dev/null
+      #     done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+      #   env:
+      #     TREE_SITTER_ABI_VERSION: ${{ env.TS_ABI_VERSION }}
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.3
         with:
