@@ -36,7 +36,6 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-versions: 24
           cache: npm
           cache-dependency-path: package*.json
       - name: Set up tree-sitter
