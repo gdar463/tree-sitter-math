@@ -1,0 +1,110 @@
+name: Publish Package (PyPI)
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  build_sdist:
+    name: Build source dist
+    runs-on: ubuntu-24.04
+    continue-on-error: true
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{vars.PYTHON_VERSION || "3.11"}}
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+      - name: Install Node dependencies
+        run: npm i --ignore-scripts --omit peer --omit optional
+        env:
+          CXXFLAGS: -std=c++20
+      - name: Regenerate parser
+        shell: bash
+        run: |
+          while read -r grammar_dir; do
+            pushd "$grammar_dir"
+            npm x -- tree-sitter generate
+            popd >/dev/null
+          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+        env:
+          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+      - name: Install Python dependencies
+        run: pip install --upgrade pip build setuptools wheel
+      - name: Build sources
+        run: pip -mbuild -n -s
+      - name: Upload sources
+        uses: actions/upload-artifact@v7
+        with:
+          name: dist-sources
+          path: dist/*.tar.gz
+          retention-days: 2
+
+  build_wheels:
+    name: Build wheels on ${{matrix.os}}
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os:
+          - windows-2025
+          - windows-11-arm
+          - ubuntu-24.04
+          - ubuntu-24.04-arm
+          - macos-15
+          - macos-15-intel
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v6
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+      - name: Install Node dependencies
+        run: npm i --ignore-scripts --omit peer --omit optional
+        env:
+          CXXFLAGS: -std=c++20
+      - name: Regenerate parser
+        shell: bash
+        run: |
+          while read -r grammar_dir; do
+            pushd "$grammar_dir"
+            npm x -- tree-sitter generate
+            popd >/dev/null
+          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+        env:
+          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v3.3
+        with:
+          output-dir: dist
+        env:
+          CIBW_ARCHS: native
+      - name: Upload wheel artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          path: dist/*.whl
+          name: dist-wheels-${{matrix.os}}
+          retention-days: 2
+
+  package:
+    name: Publish PyPI Package
+    needs: [build_sdist, build_wheels]
+    runs-on: ubuntu-24.04
+    environment:
+      name: Publishing
+      url: https://pypi.org/project/${{vars.PYPI_PACKAGE_NAME || "tree-sitter-math"}}
+    permissions:
+      id-token: write
+      attestations: write
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v7
+        with:
+          path: dist
+          name: dist-*
+          merge-multiple: true
+      - name: Check build artifacts
+        run: ls -l dist
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

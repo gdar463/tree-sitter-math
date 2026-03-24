@@ -1,0 +1,80 @@
+name: Release Package (GitHub)
+
+on:
+  workflow_call:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: Tag Name
+        required: true
+        default: ${{github.action_ref}}
+
+env:
+  REF_NAME: ${{inputs.tag_name || github.ref_name}}
+
+jobs:
+  release:
+    name: Build release artifacts
+    runs-on: ubuntu-24.04
+    environment:
+      name: Publishing
+    permissions:
+      id-token: write
+      attestations: write
+    env:
+      REPO_NAME: ${{github.event.repository.name}}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+      - name: Install dependencies
+        run: npm i --ignore-scripts --omit peer --omit optional
+        env:
+          CXXFLAGS: -std=c++20
+      - name: Regenerate parser
+        shell: bash
+        run: |
+          while read -r grammar_dir; do
+            pushd "$grammar_dir"
+            npm x -- tree-sitter generate
+            popd >/dev/null
+          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+        env:
+          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+      - name: Build Wasm binaries
+        shell: bash
+        run: |
+          while read -r grammar_dir; do
+            npm x -- tree-sitter build --wasm "$grammar_dir"
+          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+      - name: Create sources tarball
+        shell: bash
+        run: |
+          git ls-files > "$RUNNER_TEMP/files"
+          while read -r src_dir; do
+            printf '%s\n' >> "$RUNNER_TEMP/files" \
+              "$src_dir"/parser.c "$src_dir"/grammar.json \
+              "$scr_dir"/node-types.json "$src_dir"/tree-sitter/*
+          done < <(jq -r "$JQ_SCRIPT" tree-sitter.json)
+          tar cvzf "$REPO_NAME.tar.gz" -T <(sort -u "$RUNNER_TEMP/files")
+        env:
+          JQ_SCRIPT: >-
+            .grammars[] |
+            if (.path? // ".") == "."
+            then "src"
+            else "\(.path)/src"
+            end
+      - name: Generate attestations
+        uses: actions/attest-build-provenance@v4
+        with:
+          subject-path: |
+            *.wasm
+            ${{env.REPO_NAME}}.tar.gz
+      - name: Generate latest release notes
+        uses: orhun/git-cliff-action@v4
+        id: cliff
+        with:
+          args: --latest
+      - name: Create Github release
+        run: gh relese create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"{{steps.cliff.outputs.content}}"

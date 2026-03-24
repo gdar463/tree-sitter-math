@@ -9,6 +9,7 @@ on:
       - test/**
       - bindings/**
       - binding.gyp
+  workflow_dispatch:
 
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}
@@ -21,24 +22,10 @@ permissions:
 
 jobs:
   github:
-    uses: tree-sitter/workflows/.github/workflows/release.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
-    with:
-      generate: true
+    uses: ./.github/workflows/publish-gh.yml
   npm:
-    uses: tree-sitter/workflows/.github/workflows/package-npm.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
-    secrets:
-      NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-    with:
-      generate: true
+    uses: ./.github/workflows/publish-npm.yml
   crates:
-    uses: tree-sitter/workflows/.github/workflows/package-crates.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
-    secrets:
-      CARGO_REGISTRY_TOKEN: ${{secrets.CARGO_TOKEN}}
-    with:
-      generate: true
+    uses: ./.github/workflows/publish-crates.yml
   pypi:
-    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
-    secrets:
-      PYPI_API_TOKEN: ${{secrets.PYPI_TOKEN}}
-    with:
-      generate: true
+    uses: ./.github/workflows/publish-pypi.yml

@@ -1,0 +1,46 @@
+name: Publish Package (Crates)
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  package:
+    name: Publish Cargo Package
+    runs-on: ubuntu-24.04
+    environment:
+      name: Publishing
+      url: https://crates.io/crates/${{vars.CARGO_PACKAGE_NAME || "tree-sitter-math"}}
+    permissions:
+      id-token: write
+      attestations: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+      - name: Crates.io Auth
+        uses: rust-lang/crates-io-auth-action@v1
+        id: auth
+      - name: Setup Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: ${{vars.RUST_TOOLCHAIN || "stable"}}
+      - name: Setup tree-sitter
+        uses: tree-sitter/setup-action/cli@v2
+      - name: Install dependencies
+        run: npm i --ignore-scripts --omit peer --omit optional
+        env:
+          CXXFLAGS: -std=c++20
+      - name: Regenerate parser
+        shell: bash
+        run: |
+          while read -r grammar_dir; do
+            pushd "$grammar_dir"
+            npm x -- tree-sitter generate
+            popd >/dev/null
+          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+        env:
+          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+      - name: Publish to crates.io
+        run: cargo publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{steps.auth.outputs.token}}

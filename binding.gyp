@@ -19,13 +19,8 @@
         ["has_scanner=='true'", {
           "sources+": ["src/scanner.c"],
         }],
-        ["OS!='win'", {
+        ["OS=='win'", {
           "cflags_c": [
-            "-std=c++20",
-          ],
-        }, { # OS == "win"
-          "cflags_c": [
-            "/std:c++20",
             "/utf-8",
           ],
         }],
