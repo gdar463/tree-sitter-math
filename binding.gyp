@@ -21,11 +21,11 @@
         }],
         ["OS!='win'", {
           "cflags_c": [
-            "-std=c11",
+            "-std=c++20",
           ],
         }, { # OS == "win"
           "cflags_c": [
-            "/std:c11",
+            "/std:c++20",
             "/utf-8",
           ],
         }],

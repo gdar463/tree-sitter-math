@@ -33,11 +33,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-versions: 24
+          cache: npm
+          cache-dependency-path: package*.json
       - name: Set up tree-sitter
         uses: tree-sitter/setup-action/cli@v2
-      - name: Run tests
-        uses: tree-sitter/parser-test-action@v3
+      - name: Test all apart from Node
+        uses: tree-sitter/parser-test-action@v2
         with:
-          test-rust: true
-          test-node: true
           test-python: true
+          test-rust: true
+      - name: Build Node package
+        shell: sh
+        run: npm install
+        env:
+          CXXFLAGS: "-std=c++20"
+      - name: Test Node
+        shell: sh
+        run: node --test bindings/node/*_test.js
