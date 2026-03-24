@@ -1,0 +1,14 @@
+==================
+Modulo
+==================
+
+(5%8)mod6
+
+---
+
+(expression
+  (modulo
+    dividend: (modulo
+      dividend: (number)
+      divisor: (number))
+    divisor: (number)))

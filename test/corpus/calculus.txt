@@ -131,9 +131,11 @@ c=rolle(x^2,[2;4])
       function: (exponential
         base: (symbol)
         exponent: (number))
-      interval: (interval_both_inclusive
+      interval: (interval
+        (left_bracket)
         left: (number)
-        right: (number)))))
+        right: (number)
+        (right_bracket)))))
 
 ==================
 Lagrange's Theorem
@@ -150,6 +152,8 @@ c=lagrange(x^2,[2;4])
       function: (exponential
         base: (symbol)
         exponent: (number))
-      interval: (interval_both_inclusive
+      interval: (interval
+        (left_bracket)
         left: (number)
-        right: (number)))))
+        right: (number)
+        (right_bracket)))))

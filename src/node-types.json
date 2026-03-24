@@ -100,6 +100,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -268,6 +272,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -427,6 +435,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -598,6 +610,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -763,6 +779,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -934,6 +954,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -1099,6 +1123,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -1270,6 +1298,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -1438,6 +1470,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -1603,6 +1639,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -1823,6 +1863,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -2001,6 +2045,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -2166,6 +2214,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -2337,6 +2389,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -2502,6 +2558,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -2683,6 +2743,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -2842,6 +2906,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -3013,6 +3081,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -3172,6 +3244,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -3343,6 +3419,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -3502,6 +3582,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -3666,6 +3750,10 @@
           "named": true
         },
         {
+          "type": "modulo",
+          "named": true
+        },
+        {
           "type": "more_than",
           "named": true
         },
@@ -3733,7 +3821,7 @@
     }
   },
   {
-    "type": "interval_both_inclusive",
+    "type": "interval",
     "named": true,
     "fields": {
       "left": {
@@ -3742,6 +3830,10 @@
         "types": [
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "symbol",
             "named": true
           }
         ]
@@ -3753,9 +3845,27 @@
           {
             "type": "number",
             "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "left_bracket",
+          "named": true
+        },
+        {
+          "type": "right_bracket",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3859,6 +3969,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -3929,7 +4043,7 @@
         "required": true,
         "types": [
           {
-            "type": "interval_both_inclusive",
+            "type": "interval",
             "named": true
           }
         ]
@@ -4037,6 +4151,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -4196,6 +4314,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -4367,6 +4489,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -4526,6 +4652,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -4694,6 +4824,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -4899,6 +5033,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -4974,6 +5112,344 @@
           },
           {
             "type": "symbol",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "modulo",
+    "named": true,
+    "fields": {
+      "dividend": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "absolute_value",
+            "named": true
+          },
+          {
+            "type": "addition",
+            "named": true
+          },
+          {
+            "type": "arccosecant",
+            "named": true
+          },
+          {
+            "type": "arccosine",
+            "named": true
+          },
+          {
+            "type": "arccotangent",
+            "named": true
+          },
+          {
+            "type": "arcsecant",
+            "named": true
+          },
+          {
+            "type": "arcsine",
+            "named": true
+          },
+          {
+            "type": "arctangent",
+            "named": true
+          },
+          {
+            "type": "coeff_variable",
+            "named": true
+          },
+          {
+            "type": "cosecant",
+            "named": true
+          },
+          {
+            "type": "cosine",
+            "named": true
+          },
+          {
+            "type": "cotangent",
+            "named": true
+          },
+          {
+            "type": "derivative",
+            "named": true
+          },
+          {
+            "type": "division",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "exponential",
+            "named": true
+          },
+          {
+            "type": "lagrange",
+            "named": true
+          },
+          {
+            "type": "less_than",
+            "named": true
+          },
+          {
+            "type": "less_than_equals",
+            "named": true
+          },
+          {
+            "type": "limit",
+            "named": true
+          },
+          {
+            "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
+            "named": true
+          },
+          {
+            "type": "more_than",
+            "named": true
+          },
+          {
+            "type": "more_than_equals",
+            "named": true
+          },
+          {
+            "type": "natural_logarithm",
+            "named": true
+          },
+          {
+            "type": "not_equals",
+            "named": true
+          },
+          {
+            "type": "nth_root",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "piecewise",
+            "named": true
+          },
+          {
+            "type": "plus_minus",
+            "named": true
+          },
+          {
+            "type": "product",
+            "named": true
+          },
+          {
+            "type": "rolle",
+            "named": true
+          },
+          {
+            "type": "secant",
+            "named": true
+          },
+          {
+            "type": "sine",
+            "named": true
+          },
+          {
+            "type": "square_root",
+            "named": true
+          },
+          {
+            "type": "subtraction",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tangent",
+            "named": true
+          }
+        ]
+      },
+      "divisor": {
+        "multiple": true,
+        "required": true,
+        "types": [
+          {
+            "type": "(",
+            "named": false
+          },
+          {
+            "type": ")",
+            "named": false
+          },
+          {
+            "type": "absolute_value",
+            "named": true
+          },
+          {
+            "type": "addition",
+            "named": true
+          },
+          {
+            "type": "arccosecant",
+            "named": true
+          },
+          {
+            "type": "arccosine",
+            "named": true
+          },
+          {
+            "type": "arccotangent",
+            "named": true
+          },
+          {
+            "type": "arcsecant",
+            "named": true
+          },
+          {
+            "type": "arcsine",
+            "named": true
+          },
+          {
+            "type": "arctangent",
+            "named": true
+          },
+          {
+            "type": "coeff_variable",
+            "named": true
+          },
+          {
+            "type": "cosecant",
+            "named": true
+          },
+          {
+            "type": "cosine",
+            "named": true
+          },
+          {
+            "type": "cotangent",
+            "named": true
+          },
+          {
+            "type": "derivative",
+            "named": true
+          },
+          {
+            "type": "division",
+            "named": true
+          },
+          {
+            "type": "equals",
+            "named": true
+          },
+          {
+            "type": "exponential",
+            "named": true
+          },
+          {
+            "type": "lagrange",
+            "named": true
+          },
+          {
+            "type": "less_than",
+            "named": true
+          },
+          {
+            "type": "less_than_equals",
+            "named": true
+          },
+          {
+            "type": "limit",
+            "named": true
+          },
+          {
+            "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
+            "named": true
+          },
+          {
+            "type": "more_than",
+            "named": true
+          },
+          {
+            "type": "more_than_equals",
+            "named": true
+          },
+          {
+            "type": "natural_logarithm",
+            "named": true
+          },
+          {
+            "type": "not_equals",
+            "named": true
+          },
+          {
+            "type": "nth_root",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "piecewise",
+            "named": true
+          },
+          {
+            "type": "plus_minus",
+            "named": true
+          },
+          {
+            "type": "product",
+            "named": true
+          },
+          {
+            "type": "rolle",
+            "named": true
+          },
+          {
+            "type": "secant",
+            "named": true
+          },
+          {
+            "type": "sine",
+            "named": true
+          },
+          {
+            "type": "square_root",
+            "named": true
+          },
+          {
+            "type": "subtraction",
+            "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
+          },
+          {
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5078,6 +5554,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -5240,6 +5720,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -5411,6 +5895,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -5570,6 +6058,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -5741,6 +6233,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -5909,6 +6405,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -6068,6 +6568,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -6236,6 +6740,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -6437,6 +6945,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -6596,6 +7108,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -6767,6 +7283,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -6926,6 +7446,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -7097,6 +7621,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -7167,7 +7695,7 @@
         "required": true,
         "types": [
           {
-            "type": "interval_both_inclusive",
+            "type": "interval",
             "named": true
           }
         ]
@@ -7272,6 +7800,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -7443,6 +7975,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -7608,6 +8144,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -7779,6 +8319,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -7938,6 +8482,10 @@
           },
           {
             "type": "logarithm",
+            "named": true
+          },
+          {
+            "type": "modulo",
             "named": true
           },
           {
@@ -8109,6 +8657,10 @@
             "named": true
           },
           {
+            "type": "modulo",
+            "named": true
+          },
+          {
             "type": "more_than",
             "named": true
           },
@@ -8217,10 +8769,6 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
     "type": "<",
     "named": false
   },
@@ -8238,14 +8786,6 @@
   },
   {
     "type": ">=",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "]",
     "named": false
   },
   {
@@ -8297,6 +8837,10 @@
     "named": false
   },
   {
+    "type": "left_bracket",
+    "named": true
+  },
+  {
     "type": "lim",
     "named": false
   },
@@ -8311,6 +8855,10 @@
   {
     "type": "piecewise",
     "named": false
+  },
+  {
+    "type": "right_bracket",
+    "named": true
   },
   {
     "type": "rolle",

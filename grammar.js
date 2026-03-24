@@ -150,6 +150,7 @@ export default grammar({
         $.rolle,
         $.lagrange,
         $.piecewise,
+        $.modulo,
         $._trig_function,
       ),
 
@@ -386,8 +387,14 @@ export default grammar({
         ),
       ),
 
-    interval_both_inclusive: $ =>
-      seq("[", field("left", $.number), ";", field("right", $.number), "]"),
+    interval: $ =>
+      seq(
+        alias(token(choice("[", "(")), $.left_bracket),
+        field("left", choice($.number, $.symbol)),
+        token(choice(";", ",")),
+        field("right", choice($.number, $.symbol)),
+        alias(token(choice("]", ")")), $.right_bracket),
+      ),
 
     rolle: $ =>
       prec.left(
@@ -397,7 +404,7 @@ export default grammar({
           "(",
           field("function", $._expression),
           ",",
-          field("interval", $.interval_both_inclusive),
+          field("interval", $.interval),
           ")",
         ),
       ),
@@ -410,7 +417,7 @@ export default grammar({
           "(",
           field("function", $._expression),
           ",",
-          field("interval", $.interval_both_inclusive),
+          field("interval", $.interval),
           ")",
         ),
       ),
@@ -428,6 +435,16 @@ export default grammar({
         ",",
         field("interval", $._comp_operator),
         "}",
+      ),
+
+    modulo: $ =>
+      prec.left(
+        "function",
+        seq(
+          field("dividend", $._expression),
+          token(choice("mod", "%")),
+          field("divisor", $._expression),
+        ),
       ),
   },
 });
