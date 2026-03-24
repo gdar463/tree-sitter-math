@@ -25,14 +25,14 @@ jobs:
     with:
       generate: true
   npm:
-    uses: tree-sitter/workflows/.github/workflows/package-npm.yml@main
+    uses: tree-sitter/workflows/.github/workflows/package-npm.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
     with:
       generate: true
   crates:
-    uses: tree-sitter/workflows/.github/workflows/package-crates.yml@main
+    uses: tree-sitter/workflows/.github/workflows/package-crates.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
     with:
       generate: true
   pypi:
-    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@main
+    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@9a10bab3d9bb66d2cc9283b65fad01ddca3ef62c
     with:
       generate: true
