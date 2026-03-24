@@ -4,6 +4,11 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  NODE_VERSION: ${{ vars.NODE_VERSION || 24 }}
+  TS_ABI_VERSION: ${{ vars.TS_ABI_VERSION || 15 }}
+  PACKAGE_NAME: ${{ vars.NPM_PACKAGE_NAME || 'tree-sitter-math' }}
+
 jobs:
   build_wasm:
     name: Build Wasm binaries
@@ -16,7 +21,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           cache: npm
-          node-version: 24
+          node-version: ${{env.NODE_VERSION}}
       - name: Install dependencies
         run: npm i --omit peer --omit optional
         env:
@@ -30,7 +35,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Build Wasm binaries
         run: |
           while read -r grammar_dir; do
@@ -62,7 +67,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           cache: npm
-          node-version: 24
+          node-version: ${{env.NODE_VERSION}}
       - name: Install dependencies
         run: npm i --omit peer --omit optional
         env:
@@ -76,7 +81,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Build binary
         run: npm x -- prebuildify
       - name: Upload binaries
@@ -92,7 +97,7 @@ jobs:
     runs-on: ubuntu-24.04
     environment:
       name: Publishing
-      url: https://www.npmjs.com/package/${{vars.NPM_PACKAGE_NAME || "tree-sitter-math"}}
+      url: https://www.npmjs.com/package/${{env.PACKAGE_NAME}}
     permissions:
       id-token: write
       attestations: write
@@ -103,7 +108,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           cache: npm
-          node-version: 24
+          node-version: ${{env.NODE_VERSION}}
       - name: Download binaries
         uses: actions/download-artifact@v7
         with:

@@ -3,12 +3,6 @@ name: Publish Packages
 on:
   push:
     tags: ["*"]
-    paths:
-      - grammar.js
-      - src/**
-      - test/**
-      - bindings/**
-      - binding.gyp
   workflow_dispatch:
 
 concurrency:

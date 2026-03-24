@@ -4,13 +4,18 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  RUST_TOOLCHAIN: ${{ vars.RUST_TOOLCHAIN || 'stable' }}
+  TS_ABI_VERSION: ${{ vars.TS_ABI_VERSION || 15 }}
+  PACKAGE_NAME: ${{ vars.CARGO_PACKAGE_NAME || 'tree-sitter-math' }}
+
 jobs:
   package:
     name: Publish Cargo Package
     runs-on: ubuntu-24.04
     environment:
       name: Publishing
-      url: https://crates.io/crates/${{vars.CARGO_PACKAGE_NAME || "tree-sitter-math"}}
+      url: https://crates.io/crates/${{env.PACKAGE_NAME}}
     permissions:
       id-token: write
       attestations: write
@@ -23,7 +28,7 @@ jobs:
       - name: Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         with:
-          toolchain: ${{vars.RUST_TOOLCHAIN || "stable"}}
+          toolchain: ${{env.RUST_TOOLCHAIN}}
       - name: Setup tree-sitter
         uses: tree-sitter/setup-action/cli@v2
       - name: Install dependencies
@@ -39,7 +44,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Publish to crates.io
         run: cargo publish
         env:

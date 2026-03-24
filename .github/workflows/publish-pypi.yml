@@ -4,6 +4,11 @@ on:
   workflow_call:
   workflow_dispatch:
 
+env:
+  PYTHON_VERSION: ${{ vars.PYTHON_VERSION || '3.11' }}
+  TS_ABI_VERSION: ${{ vars.TS_ABI_VERSION || 15 }}
+  PACKAGE_NAME: ${{ vars.PYPI_PACKAGE_NAME || 'tree-sitter-math' }}
+
 jobs:
   build_sdist:
     name: Build source dist
@@ -15,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
-          python-version: ${{vars.PYTHON_VERSION || "3.11"}}
+          python-version: ${{env.PYTHON_VERSION}}
       - name: Setup tree-sitter
         uses: tree-sitter/setup-action/cli@v2
       - name: Install Node dependencies
@@ -31,7 +36,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Install Python dependencies
         run: pip install --upgrade pip build setuptools wheel
       - name: Build sources
@@ -73,7 +78,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{ env.TS_ABI_VERSION }}
       - name: Build wheels
         uses: pypa/cibuildwheel@v3.3
         with:
@@ -93,7 +98,7 @@ jobs:
     runs-on: ubuntu-24.04
     environment:
       name: Publishing
-      url: https://pypi.org/project/${{vars.PYPI_PACKAGE_NAME || "tree-sitter-math"}}
+      url: https://pypi.org/project/${{env.PACKAGE_NAME}}
     permissions:
       id-token: write
       attestations: write

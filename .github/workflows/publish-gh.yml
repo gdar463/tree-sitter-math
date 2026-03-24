@@ -7,10 +7,9 @@ on:
       tag_name:
         description: Tag Name
         required: true
-        default: ${{github.action_ref}}
 
 env:
-  REF_NAME: ${{inputs.tag_name || github.ref_name}}
+  TS_ABI_VERSION: ${{ vars.TS_ABI_VERSION || 15 }}
 
 jobs:
   release:
@@ -23,6 +22,7 @@ jobs:
       attestations: write
     env:
       REPO_NAME: ${{github.event.repository.name}}
+      REF_NAME: ${{ inputs.tag_name || github.ref_name }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
@@ -41,7 +41,7 @@ jobs:
             popd >/dev/null
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
         env:
-          TREE_SITTER_ABI_VERSION: ${{vars.ABI_VERSION || 15}}
+          TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Build Wasm binaries
         shell: bash
         run: |
