@@ -29,13 +29,13 @@ Basic Operations w/variables
   (addition
     left: (product
       left: (number)
-      right: (variable))
+      right: (symbol))
     right: (division
       left: (exponential
         base: (number)
         exponent: (addition
           left: (number)
-          right: (variable)))
+          right: (symbol)))
       right: (exponential
         base: (number)
         exponent: (number)))))
@@ -52,17 +52,17 @@ Basic Operations w/variables & implicit mult
   (addition
     left: (coeff_variable
       coefficient: (number)
-      variable: (variable))
+      variable: (symbol))
     right: (division
       left: (exponential
         base: (coeff_variable
           coefficient: (addition
             left: (number)
             right: (number))
-          variable: (variable))
+          variable: (symbol))
         exponent: (addition
           left: (number)
-          right: (variable)))
+          right: (symbol)))
       right: (exponential
         base: (number)
         exponent: (number)))))
@@ -77,5 +77,5 @@ b+-5
 
 (expression
   (plus_minus
-    left: (variable)
+    left: (symbol)
     right: (number)))

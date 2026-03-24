@@ -29,7 +29,7 @@ export default grammar({
       choice(
         $._function,
         $.number,
-        $.variable,
+        $.symbol,
         $.coeff_variable,
         $.plus_minus,
         $.addition,
@@ -43,7 +43,7 @@ export default grammar({
     _parenthesized_expression: $ => seq("(", $._expression, ")"),
 
     number: _$ => /-?\d+(\.\d+)?/,
-    variable: _$ => token(prec(-1, /[a-zA-Z$]/)),
+    symbol: _$ => token(prec(-1, /[a-zA-Z$]/)),
 
     coeff_variable: $ =>
       seq(
@@ -56,7 +56,7 @@ export default grammar({
             token("-"),
           ),
         ),
-        field("variable", $.variable),
+        field("variable", $.symbol),
       ),
 
     plus_minus: $ =>
@@ -176,7 +176,7 @@ export default grammar({
         "function",
         seq(
           token("log"),
-          field("base", choice($.number, $.variable)),
+          field("base", choice($.number, $.symbol)),
           "(",
           field("argument", $._expression),
           ")",
@@ -205,7 +205,7 @@ export default grammar({
         "function",
         seq(
           token("root"),
-          field("degree", choice($.number, $.variable)),
+          field("degree", choice($.number, $.symbol)),
           "(",
           field("argument", $._expression),
           ")",
@@ -217,10 +217,10 @@ export default grammar({
         "function",
         seq(
           token("lim"),
-          field("variable", $.variable),
+          field("variable", $.symbol),
           "->",
-          field("point", choice($.number, $.variable)),
-          optional(field("direction", token(choice("+", "-")))),
+          field("point", choice($.number, $.symbol)),
+          optional(alias(token(choice("+", "-")), $.side)),
           "(",
           field("function", $._expression),
           ")",
@@ -232,7 +232,7 @@ export default grammar({
         "function",
         seq(
           token("d/d"),
-          field("variable", $.variable),
+          field("variable", $.symbol),
           field("function", $._expression),
         ),
       ),
@@ -260,7 +260,7 @@ export default grammar({
           seq(token("sin"), "(", field("argument", $._expression), ")"),
           seq(
             token("sin"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -271,7 +271,7 @@ export default grammar({
           seq(token("cos"), "(", field("argument", $._expression), ")"),
           seq(
             token("cos"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -282,7 +282,7 @@ export default grammar({
           seq(token("tan"), "(", field("argument", $._expression), ")"),
           seq(
             token("tan"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -293,7 +293,7 @@ export default grammar({
           seq(token("csc"), "(", field("argument", $._expression), ")"),
           seq(
             token("csc"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -304,7 +304,7 @@ export default grammar({
           seq(token("sec"), "(", field("argument", $._expression), ")"),
           seq(
             token("sec"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -315,7 +315,7 @@ export default grammar({
           seq(token("cot"), "(", field("argument", $._expression), ")"),
           seq(
             token("cot"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -326,7 +326,7 @@ export default grammar({
           seq(token("arcsin"), "(", field("argument", $._expression), ")"),
           seq(
             token("arcsin"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -337,7 +337,7 @@ export default grammar({
           seq(token("arccos"), "(", field("argument", $._expression), ")"),
           seq(
             token("arccos"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -348,7 +348,7 @@ export default grammar({
           seq(token("arctan"), "(", field("argument", $._expression), ")"),
           seq(
             token("arctan"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -359,7 +359,7 @@ export default grammar({
           seq(token("arccsc"), "(", field("argument", $._expression), ")"),
           seq(
             token("arccsc"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -370,7 +370,7 @@ export default grammar({
           seq(token("arcsec"), "(", field("argument", $._expression), ")"),
           seq(
             token("arcsec"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),
@@ -381,7 +381,7 @@ export default grammar({
           seq(token("arccot"), "(", field("argument", $._expression), ")"),
           seq(
             token("arccot"),
-            field("argument", choice($.coeff_variable, $.variable)),
+            field("argument", choice($.coeff_variable, $.symbol)),
           ),
         ),
       ),

@@ -156,11 +156,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -324,11 +324,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -486,11 +486,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -654,11 +654,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -822,11 +822,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -990,11 +990,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1158,11 +1158,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1326,11 +1326,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1494,11 +1494,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1662,11 +1662,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1879,11 +1879,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -1893,7 +1893,7 @@
         "required": true,
         "types": [
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -2057,11 +2057,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -2225,11 +2225,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -2393,11 +2393,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -2561,11 +2561,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -2575,7 +2575,7 @@
         "required": true,
         "types": [
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -2739,11 +2739,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -2901,11 +2901,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3069,11 +3069,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3231,11 +3231,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3399,11 +3399,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3561,11 +3561,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3722,18 +3722,18 @@
           "named": true
         },
         {
-          "type": "tangent",
+          "type": "symbol",
           "named": true
         },
         {
-          "type": "variable",
+          "type": "tangent",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "interval_both_inclusive",
+    "type": "interval",
     "named": true,
     "fields": {
       "left": {
@@ -3742,6 +3742,10 @@
         "types": [
           {
             "type": "number",
+            "named": true
+          },
+          {
+            "type": "symbol",
             "named": true
           }
         ]
@@ -3753,9 +3757,27 @@
           {
             "type": "number",
             "named": true
+          },
+          {
+            "type": "symbol",
+            "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "left_bracket",
+          "named": true
+        },
+        {
+          "type": "right_bracket",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -3915,11 +3937,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -3929,7 +3951,7 @@
         "required": true,
         "types": [
           {
-            "type": "interval_both_inclusive",
+            "type": "interval",
             "named": true
           }
         ]
@@ -4093,11 +4115,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4255,11 +4277,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4423,11 +4445,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4585,11 +4607,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4753,11 +4775,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4771,7 +4793,7 @@
             "named": true
           },
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -4781,11 +4803,21 @@
         "required": true,
         "types": [
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "side",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -4945,11 +4977,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -4963,7 +4995,7 @@
             "named": true
           },
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -5127,11 +5159,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5289,11 +5321,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5457,11 +5489,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5619,11 +5651,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5787,11 +5819,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -5955,11 +5987,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6117,11 +6149,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6285,11 +6317,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6303,7 +6335,7 @@
             "named": true
           },
           {
-            "type": "variable",
+            "type": "symbol",
             "named": true
           }
         ]
@@ -6483,11 +6515,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6645,11 +6677,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6813,11 +6845,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -6975,11 +7007,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7143,11 +7175,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7157,7 +7189,7 @@
         "required": true,
         "types": [
           {
-            "type": "interval_both_inclusive",
+            "type": "interval",
             "named": true
           }
         ]
@@ -7321,11 +7353,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7489,11 +7521,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7657,11 +7689,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7825,11 +7857,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -7987,11 +8019,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -8155,11 +8187,11 @@
             "named": true
           },
           {
-            "type": "tangent",
+            "type": "symbol",
             "named": true
           },
           {
-            "type": "variable",
+            "type": "tangent",
             "named": true
           }
         ]
@@ -8207,10 +8239,6 @@
     "named": false
   },
   {
-    "type": ";",
-    "named": false
-  },
-  {
     "type": "<",
     "named": false
   },
@@ -8228,14 +8256,6 @@
   },
   {
     "type": ">=",
-    "named": false
-  },
-  {
-    "type": "[",
-    "named": false
-  },
-  {
-    "type": "]",
     "named": false
   },
   {
@@ -8287,6 +8307,10 @@
     "named": false
   },
   {
+    "type": "left_bracket",
+    "named": true
+  },
+  {
     "type": "lim",
     "named": false
   },
@@ -8303,6 +8327,10 @@
     "named": false
   },
   {
+    "type": "right_bracket",
+    "named": true
+  },
+  {
     "type": "rolle",
     "named": false
   },
@@ -8315,16 +8343,20 @@
     "named": false
   },
   {
+    "type": "side",
+    "named": true
+  },
+  {
     "type": "sin",
     "named": false
   },
   {
-    "type": "tan",
-    "named": false
+    "type": "symbol",
+    "named": true
   },
   {
-    "type": "variable",
-    "named": true
+    "type": "tan",
+    "named": false
   },
   {
     "type": "{",

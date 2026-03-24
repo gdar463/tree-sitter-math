@@ -9,9 +9,9 @@ sin(x)=sinx
 (expression
   (equals
     left: (sine
-      argument: (variable))
+      argument: (symbol))
     right: (sine
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Cosine
@@ -24,9 +24,9 @@ cos(x)=cosx
 (expression
   (equals
     left: (cosine
-      argument: (variable))
+      argument: (symbol))
     right: (cosine
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Tangent
@@ -39,9 +39,9 @@ tan(x)=tanx
 (expression
   (equals
     left: (tangent
-      argument: (variable))
+      argument: (symbol))
     right: (tangent
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Cosecant
@@ -54,9 +54,9 @@ csc(x)=cscx
 (expression
   (equals
     left: (cosecant
-      argument: (variable))
+      argument: (symbol))
     right: (cosecant
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Secant
@@ -69,9 +69,9 @@ sec(x)=secx
 (expression
   (equals
     left: (secant
-      argument: (variable))
+      argument: (symbol))
     right: (secant
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Cotangent
@@ -84,9 +84,9 @@ cot(x)=cotx
 (expression
   (equals
     left: (cotangent
-      argument: (variable))
+      argument: (symbol))
     right: (cotangent
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arcsine
@@ -99,9 +99,9 @@ arcsin(x)=arcsinx
 (expression
   (equals
     left: (arcsine
-      argument: (variable))
+      argument: (symbol))
     right: (arcsine
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arcosine
@@ -114,9 +114,9 @@ arccos(x)=arccosx
 (expression
   (equals
     left: (arccosine
-      argument: (variable))
+      argument: (symbol))
     right: (arccosine
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arctangent
@@ -129,9 +129,9 @@ arctan(x)=arctanx
 (expression
   (equals
     left: (arctangent
-      argument: (variable))
+      argument: (symbol))
     right: (arctangent
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arccosecant
@@ -144,9 +144,9 @@ arccsc(x)=arccscx
 (expression
   (equals
     left: (arccosecant
-      argument: (variable))
+      argument: (symbol))
     right: (arccosecant
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arcsecant
@@ -159,9 +159,9 @@ arcsec(x)=arcsecx
 (expression
   (equals
     left: (arcsecant
-      argument: (variable))
+      argument: (symbol))
     right: (arcsecant
-      argument: (variable))))
+      argument: (symbol))))
 
 ==================
 Arccotangent
@@ -174,6 +174,6 @@ arccot(x)=arccotx
 (expression
   (equals
     left: (arccotangent
-      argument: (variable))
+      argument: (symbol))
     right: (arccotangent
-      argument: (variable))))
+      argument: (symbol))))

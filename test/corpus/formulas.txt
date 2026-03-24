@@ -8,24 +8,24 @@ x=(-b+-sqrt(b^2-4ac))/2a
 
 (expression
   (equals
-    left: (variable)
+    left: (symbol)
     right: (division
       left: (plus_minus
         left: (coeff_variable
-          variable: (variable))
+          variable: (symbol))
         right: (square_root
           argument: (subtraction
             left: (exponential
-              base: (variable)
+              base: (symbol)
               exponent: (number))
             right: (coeff_variable
               coefficient: (coeff_variable
                 coefficient: (number)
-                variable: (variable))
-              variable: (variable)))))
+                variable: (symbol))
+              variable: (symbol)))))
       right: (coeff_variable
         coefficient: (number)
-        variable: (variable)))))
+        variable: (symbol)))))
 
 ==================
 Absolute Value Piecewise Function
@@ -39,13 +39,13 @@ piecewise({x,x>=0},{-x,x<0})
   (piecewise
     cases: (cases
       (case
-        function: (variable)
+        function: (symbol)
         interval: (more_than_equals
-          left: (variable)
+          left: (symbol)
           right: (number)))
       (case
         function: (coeff_variable
-          variable: (variable))
+          variable: (symbol))
         interval: (less_than
-          left: (variable)
+          left: (symbol)
           right: (number))))))
