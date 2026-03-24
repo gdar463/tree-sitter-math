@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(tree-sitter-math
-        VERSION "0.1.0"
+        VERSION "0.1.1"
         DESCRIPTION "Math grammar for tree-sitter"
         HOMEPAGE_URL "https://github.com/gdar463/tree-sitter-math"
         LANGUAGES C)
