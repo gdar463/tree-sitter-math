@@ -46,6 +46,6 @@ jobs:
         env:
           TREE_SITTER_ABI_VERSION: ${{env.TS_ABI_VERSION}}
       - name: Publish to crates.io
-        run: cargo publish
+        run: cargo publish --allow-dirty
         env:
           CARGO_REGISTRY_TOKEN: ${{steps.auth.outputs.token}}
