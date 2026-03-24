@@ -55,7 +55,7 @@ jobs:
           while read -r src_dir; do
             printf '%s\n' >> "$RUNNER_TEMP/files" \
               "$src_dir"/parser.c "$src_dir"/grammar.json \
-              "$scr_dir"/node-types.json "$src_dir"/tree-sitter/*
+              "$src_dir"/node-types.json "$src_dir"/tree_sitter/*
           done < <(jq -r "$JQ_SCRIPT" tree-sitter.json)
           tar cvzf "$REPO_NAME.tar.gz" -T <(sort -u "$RUNNER_TEMP/files")
         env:
@@ -77,4 +77,4 @@ jobs:
         with:
           args: --latest
       - name: Create Github release
-        run: gh relese create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"{{steps.cliff.outputs.content}}"
+        run: gh release create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"{{steps.cliff.outputs.content}}"
