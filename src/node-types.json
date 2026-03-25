@@ -3322,7 +3322,7 @@
     "type": "exponential",
     "named": true,
     "fields": {
-      "base": {
+      "left": {
         "multiple": true,
         "required": true,
         "types": [
@@ -3488,7 +3488,7 @@
           }
         ]
       },
-      "exponent": {
+      "right": {
         "multiple": true,
         "required": true,
         "types": [

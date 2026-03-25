@@ -15,14 +15,14 @@ loge(6+6)-log(e^2)+ln(x**2+2)/log30(6)
           right: (number)))
       right: (natural_logarithm
         argument: (exponential
-          base: (symbol)
-          exponent: (number))))
+          left: (symbol)
+          right: (number))))
     right: (division
       left: (natural_logarithm
         argument: (addition
           left: (exponential
-            base: (symbol)
-            exponent: (number))
+            left: (symbol)
+            right: (number))
           right: (number)))
       right: (logarithm
         base: (number)
@@ -38,18 +38,18 @@ abs(7x^3+7-ln(4))**abs(-4)
 
 (expression
   (exponential
-    base: (absolute_value
+    left: (absolute_value
       argument: (subtraction
         left: (addition
           left: (exponential
-            base: (coeff_variable
+            left: (coeff_variable
               coefficient: (number)
               variable: (symbol))
-            exponent: (number))
+            right: (number))
           right: (number))
         right: (natural_logarithm
           argument: (number))))
-    exponent: (absolute_value
+    right: (absolute_value
       argument: (number))))
 
 ==================
@@ -129,8 +129,8 @@ c=rolle(x^2,[2;4])
     left: (symbol)
     right: (rolle
       function: (exponential
-        base: (symbol)
-        exponent: (number))
+        left: (symbol)
+        right: (number))
       interval: (interval
         (left_bracket)
         left: (number)
@@ -150,8 +150,8 @@ c=lagrange(x^2,[2;4])
     left: (symbol)
     right: (lagrange
       function: (exponential
-        base: (symbol)
-        exponent: (number))
+        left: (symbol)
+        right: (number))
       interval: (interval
         (left_bracket)
         left: (number)

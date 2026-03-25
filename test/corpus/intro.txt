@@ -14,8 +14,8 @@ Basic Operations
     right: (division
       left: (number)
       right: (exponential
-        base: (number)
-        exponent: (number)))))
+        left: (number)
+        right: (number)))))
 
 ==================
 Basic Operations w/variables
@@ -32,13 +32,13 @@ Basic Operations w/variables
       right: (symbol))
     right: (division
       left: (exponential
-        base: (number)
-        exponent: (addition
+        left: (number)
+        right: (addition
           left: (number)
           right: (symbol)))
       right: (exponential
-        base: (number)
-        exponent: (number)))))
+        left: (number)
+        right: (number)))))
 
 ==================
 Basic Operations w/variables & implicit mult
@@ -55,17 +55,17 @@ Basic Operations w/variables & implicit mult
       variable: (symbol))
     right: (division
       left: (exponential
-        base: (coeff_variable
+        left: (coeff_variable
           coefficient: (addition
             left: (number)
             right: (number))
           variable: (symbol))
-        exponent: (addition
+        right: (addition
           left: (number)
           right: (symbol)))
       right: (exponential
-        base: (number)
-        exponent: (number)))))
+        left: (number)
+        right: (number)))))
 
 ==================
 Plus Minus

@@ -91,9 +91,9 @@ export default grammar({
       prec.left(
         "exponential",
         seq(
-          field("base", $._expression),
+          field("left", $._expression),
           token(choice("**", "^")),
-          field("exponent", $._expression),
+          field("right", $._expression),
         ),
       ),
 

@@ -16,8 +16,8 @@ x=(-b+-sqrt(b^2-4ac))/2a
         right: (square_root
           argument: (subtraction
             left: (exponential
-              base: (symbol)
-              exponent: (number))
+              left: (symbol)
+              right: (number))
             right: (coeff_variable
               coefficient: (coeff_variable
                 coefficient: (number)

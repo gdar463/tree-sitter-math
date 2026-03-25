@@ -285,7 +285,7 @@
         "members": [
           {
             "type": "FIELD",
-            "name": "base",
+            "name": "left",
             "content": {
               "type": "SYMBOL",
               "name": "_expression"
@@ -309,7 +309,7 @@
           },
           {
             "type": "FIELD",
-            "name": "exponent",
+            "name": "right",
             "content": {
               "type": "SYMBOL",
               "name": "_expression"
