@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-math"
 description = "Math grammar for tree-sitter"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["gdar463 <dev@gdar463.com>"]
 license = "GPL-3.0-only"
 readme = "README.md"
