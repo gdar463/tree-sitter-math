@@ -40,7 +40,7 @@ export default grammar({
         $._comp_operator,
         $._parenthesized_expression,
       ),
-    _parenthesized_expression: $ => seq("(", $._expression, ")"),
+    _parenthesized_expression: $ => seq(token("("), $._expression, token(")")),
 
     number: _$ => /-?\d+(\.\d+)?/,
     symbol: _$ => token(prec(-1, /[a-zA-Z$]/)),
