@@ -3,10 +3,6 @@ name: Release Package (GitHub)
 on:
   workflow_call:
   workflow_dispatch:
-    inputs:
-      tag_name:
-        description: Tag Name
-        required: true
 
 env:
   TS_ABI_VERSION: ${{ vars.TS_ABI_VERSION || 15 }}
@@ -20,9 +16,10 @@ jobs:
     permissions:
       id-token: write
       attestations: write
+      contents: write
     env:
       REPO_NAME: ${{github.event.repository.name}}
-      REF_NAME: ${{ inputs.tag_name || github.ref_name }}
+      REF_NAME: ${{github.ref_name}}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
@@ -78,3 +75,5 @@ jobs:
           args: --latest
       - name: Create Github release
         run: gh release create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"{{steps.cliff.outputs.content}}"
+        env:
+          GH_TOKEN: ${{github.token}}
