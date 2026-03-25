@@ -21,5 +21,8 @@ jobs:
     uses: ./.github/workflows/publish-npm.yml
   crates:
     uses: ./.github/workflows/publish-crates.yml
-  pypi:
-    uses: ./.github/workflows/publish-pypi.yml
+  # Removed for problems with trusted publishing
+  # Run separately
+  #
+  # pypi:
+  #   uses: ./.github/workflows/publish-pypi.yml
