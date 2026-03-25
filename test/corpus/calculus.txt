@@ -96,7 +96,7 @@ limx->5(4x*4)=limx->5-(6)
     right: (limit
       variable: (symbol)
       point: (number)
-      (side)
+      side: (side)
       function: (number))))
 
 ==================

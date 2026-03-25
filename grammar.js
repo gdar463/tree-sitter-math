@@ -221,7 +221,7 @@ export default grammar({
           field("variable", $.symbol),
           "->",
           field("point", choice($.number, $.symbol)),
-          optional(alias(token(choice("+", "-")), $.side)),
+          optional(field("side", alias(token(choice("+", "-")), $.side))),
           "(",
           field("function", $._expression),
           ")",

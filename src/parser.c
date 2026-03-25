@@ -13,7 +13,7 @@
 #define ALIAS_COUNT 0
 #define TOKEN_COUNT 48
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 14
+#define FIELD_COUNT 15
 #define MAX_ALIAS_SEQUENCE_LENGTH 8
 #define MAX_RESERVED_WORD_SET_SIZE 0
 #define PRODUCTION_ID_COUNT 17
@@ -716,7 +716,8 @@ enum ts_field_identifiers {
   field_left = 11,
   field_point = 12,
   field_right = 13,
-  field_variable = 14,
+  field_side = 14,
+  field_variable = 15,
 };
 
 static const char * const ts_field_names[] = {
@@ -734,6 +735,7 @@ static const char * const ts_field_names[] = {
   [field_left] = "left",
   [field_point] = "point",
   [field_right] = "right",
+  [field_side] = "side",
   [field_variable] = "variable",
 };
 
@@ -752,8 +754,8 @@ static const TSMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [12] = {.index = 18, .length = 2},
   [13] = {.index = 20, .length = 3},
   [14] = {.index = 23, .length = 2},
-  [15] = {.index = 25, .length = 3},
-  [16] = {.index = 28, .length = 2},
+  [15] = {.index = 25, .length = 4},
+  [16] = {.index = 29, .length = 2},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -799,8 +801,9 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
   [25] =
     {field_function, 6},
     {field_point, 3},
+    {field_side, 4},
     {field_variable, 1},
-  [28] =
+  [29] =
     {field_left, 1},
     {field_right, 3},
 };

@@ -4910,6 +4910,16 @@
           }
         ]
       },
+      "side": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "side",
+            "named": true
+          }
+        ]
+      },
       "variable": {
         "multiple": false,
         "required": true,
@@ -4920,16 +4930,6 @@
           }
         ]
       }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "side",
-          "named": true
-        }
-      ]
     }
   },
   {
