@@ -74,6 +74,6 @@ jobs:
         with:
           args: --latest
       - name: Create Github release
-        run: gh release create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"{{steps.cliff.outputs.content}}"
+        run: gh release create "${{env.REF_NAME}}" *.wasm "$REPO_NAME.tar.gz" -t "${{env.REF_NAME}}" -n"${{steps.cliff.outputs.content}}"
         env:
           GH_TOKEN: ${{github.token}}
