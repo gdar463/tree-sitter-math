@@ -147,6 +147,8 @@ export default grammar({
         $.nth_root,
         $.limit,
         $.derivative,
+        $.definite_integral,
+        $.indefinite_integral,
         $.rolle,
         $.lagrange,
         $.piecewise,
@@ -235,6 +237,37 @@ export default grammar({
           token("d/d"),
           field("variable", $.symbol),
           field("function", $._expression),
+        ),
+      ),
+
+    definite_integral: $ =>
+      prec.left(
+        "function",
+        seq(
+          token("int"),
+          "{",
+          field("left_bound", $.number),
+          ",",
+          field("right_bound", $.number),
+          "}",
+          "(",
+          field("integrand", $._expression),
+          ")",
+          token("d"),
+          field("variable", $.symbol),
+        ),
+      ),
+
+    indefinite_integral: $ =>
+      prec.left(
+        "function",
+        seq(
+          token("int"),
+          "(",
+          field("integrand", $._expression),
+          ")",
+          token("d"),
+          field("variable", $.symbol),
         ),
       ),
 

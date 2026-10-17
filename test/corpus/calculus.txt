@@ -117,6 +117,46 @@ d/dx5x=5
     right: (number)))
 
 ==================
+Definite Integrals
+==================
+
+int{0,10}(3)dx=3x+c
+
+---
+
+(expression
+  (equals
+    left: (definite_integral
+      left_bound: (number)
+      right_bound: (number)
+      integrand: (number)
+      variable: (symbol))
+    right: (addition
+      left: (coeff_variable
+        coefficient: (number)
+        variable: (symbol))
+      right: (symbol))))
+
+==================
+Indefinite Integrals
+==================
+
+int(3)dx=3x+c
+
+---
+
+(expression
+  (equals
+    left: (indefinite_integral
+      integrand: (number)
+      variable: (symbol))
+    right: (addition
+      left: (coeff_variable
+        coefficient: (number)
+        variable: (symbol))
+      right: (symbol))))
+
+==================
 Rolle's Theorem
 ==================
 

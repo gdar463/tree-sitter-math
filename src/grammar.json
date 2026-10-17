@@ -560,6 +560,14 @@
         },
         {
           "type": "SYMBOL",
+          "name": "definite_integral"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "indefinite_integral"
+        },
+        {
+          "type": "SYMBOL",
           "name": "rolle"
         },
         {
@@ -958,6 +966,128 @@
             "content": {
               "type": "SYMBOL",
               "name": "_expression"
+            }
+          }
+        ]
+      }
+    },
+    "definite_integral": {
+      "type": "PREC_LEFT",
+      "value": "function",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": "int"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "{"
+          },
+          {
+            "type": "FIELD",
+            "name": "left_bound",
+            "content": {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ","
+          },
+          {
+            "type": "FIELD",
+            "name": "right_bound",
+            "content": {
+              "type": "SYMBOL",
+              "name": "number"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "}"
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "FIELD",
+            "name": "integrand",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          },
+          {
+            "type": "TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": "d"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "variable",
+            "content": {
+              "type": "SYMBOL",
+              "name": "symbol"
+            }
+          }
+        ]
+      }
+    },
+    "indefinite_integral": {
+      "type": "PREC_LEFT",
+      "value": "function",
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": "int"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": "("
+          },
+          {
+            "type": "FIELD",
+            "name": "integrand",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expression"
+            }
+          },
+          {
+            "type": "STRING",
+            "value": ")"
+          },
+          {
+            "type": "TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": "d"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "variable",
+            "content": {
+              "type": "SYMBOL",
+              "name": "symbol"
             }
           }
         ]
