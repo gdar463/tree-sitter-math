@@ -12,6 +12,7 @@ x=(-b+-sqrt(b^2-4ac))/2a
     right: (division
       left: (plus_minus
         left: (coeff_variable
+          coefficient: (negative)
           variable: (symbol))
         right: (square_root
           argument: (subtraction
@@ -45,6 +46,7 @@ piecewise({x,x>=0},{-x,x<0})
           right: (number)))
       (case
         function: (coeff_variable
+          coefficient: (negative)
           variable: (symbol))
         interval: (less_than
           left: (symbol)

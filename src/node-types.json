@@ -1855,10 +1855,6 @@
             "named": false
           },
           {
-            "type": "-",
-            "named": false
-          },
-          {
             "type": "absolute_value",
             "named": true
           },
@@ -1964,6 +1960,10 @@
           },
           {
             "type": "natural_logarithm",
+            "named": true
+          },
+          {
+            "type": "negative",
             "named": true
           },
           {
@@ -9655,6 +9655,10 @@
   {
     "type": "log",
     "named": false
+  },
+  {
+    "type": "negative",
+    "named": true
   },
   {
     "type": "number",

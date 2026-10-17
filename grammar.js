@@ -53,7 +53,7 @@ export default grammar({
             $._parenthesized_expression,
             $.coeff_variable,
             $.number,
-            token("-"),
+            alias(token("-"), $.negative),
           ),
         ),
         field("variable", $.symbol),
