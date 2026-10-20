@@ -1,6 +1,6 @@
 LANGUAGE_NAME := tree-sitter-math
 HOMEPAGE_URL := https://github.com/gdar463/tree-sitter-math
-VERSION := 0.1.3
+VERSION := 0.1.4
 
 # repository
 SRC_DIR := src
