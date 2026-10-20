@@ -22,7 +22,7 @@ readme = "README.md"
 Homepage = "https://github.com/gdar463/tree-sitter-math"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.24"]
+core = ["tree-sitter~=0.26"]
 
 [tool.cibuildwheel]
 build = "cp310-*"
